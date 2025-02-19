@@ -1,12 +1,12 @@
 import { useId } from "react";
 import s from "./SearchBox.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setNameFilter } from "../../redux/filtersSlice";
+import { changeFilter } from "../../redux/filtersSlice";
 
 const SearchBox = () => {
   const dispatch = useDispatch();
   const filter = useSelector((state) => state.filters.name);
-  const handleFilterChange = (filter) => dispatch(setNameFilter(filter));
+  const handleFilterChange = (filter) => dispatch(changeFilter(filter));
   const id = useId();
 
   return (
